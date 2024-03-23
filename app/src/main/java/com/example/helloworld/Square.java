@@ -25,10 +25,10 @@ public class Square extends Activity {
         byte maxColor=(byte)255;
         byte colors[] =
                 {
-                        0, 0, 0, maxColor,
-                        0, 0, maxColor, maxColor,
-                        0, 0, maxColor, maxColor,
-                        0, 0, 0, maxColor,
+                        maxColor, maxColor, maxColor, maxColor,
+                        maxColor, maxColor, maxColor, maxColor,
+                        maxColor, maxColor, maxColor, maxColor,
+                        maxColor, maxColor, maxColor, maxColor,
                 };
         byte indices[] =
                 {
@@ -60,6 +60,6 @@ public class Square extends Activity {
         gl.glFrontFace(GL11.GL_CW);
         gl.glVertexPointer(2, GL11.GL_FLOAT, 0, mFVertexBuffer);
         gl.glColorPointer(4, GL11.GL_UNSIGNED_BYTE, 0, mColorBuffer);
-        gl.glDrawElements(GL11.GL_TRIANGLE_FAN, 6, GL11.GL_UNSIGNED_BYTE, mIndexBuffer);
+        gl.glDrawElements(GL11.GL_LINE_LOOP, 6, GL11.GL_UNSIGNED_BYTE, mIndexBuffer);
     }
 }

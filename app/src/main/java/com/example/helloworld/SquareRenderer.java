@@ -28,14 +28,14 @@ public class SquareRenderer implements GLSurfaceView.Renderer
         gl.glMatrixMode(GL10.GL_PROJECTION);
         gl.glLoadIdentity();
         float ratio = (float) width / height;
-        gl.glFrustumf(-ratio, ratio, -1, 1, 1, 10);
+        gl.glFrustumf(-ratio, ratio, -0.5f, 1.5f, 0.2f, 10);
     }
     public void onDrawFrame(GL10 gl)
     {
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
         gl.glMatrixMode(GL10.GL_MODELVIEW);
         gl.glLoadIdentity();
-        gl.glTranslatef(0.0f,(float)Math.sin(mTransY), -3.0f);
+        gl.glTranslatef(0.0f,0.0f, -3.0f);
         mTransY += 0.02f;
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
